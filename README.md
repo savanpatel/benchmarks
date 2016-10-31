@@ -1,2 +1,4 @@
 # libc-syscall-benchmark
-Benchmark for libc functions and some system calls on Linux.
+Benchmark various utilities
+
+1. malloc
