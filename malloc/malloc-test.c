@@ -31,7 +31,7 @@ long timer_end(struct timespec start_time)
 
 /*
  *  max memory allocation in testing.
- *  testing will start with size = 8 KB upto  2^n < MAX-SIZE.
+ *  testing will start with size = 1 KB upto  2^n < MAX-SIZE.
  *  it is recommended to have MAX-SIZE in power of 2.
  */
 int MAX_SIZE = 1024;
@@ -65,7 +65,6 @@ pthread_mutex_t result_file_mutex = PTHREAD_MUTEX_INITIALIZER;
 /*
  * thread will execute this run function which has parameter for its task
  * it measures time take to run task and outputs it in TEST_OUT_FILE.
- * TODO : add params
  */
 void * nice_thread_run(void *args)
 {
