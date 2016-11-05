@@ -102,26 +102,7 @@ void * nice_thread_run(void *args)
     printf("\n %ld", time_elapsed_nanos);
 }
 
-/*
-int array_size = 1;
-int allocation_size = 8;
-int i = 0 ;
-long time_elapsed_nanos;
 
-while(allocation_size < max_allocation_size)
-{
-      array_size = 1;
-      while (array_size < max_array_size)
-      {
-          //TODO: calculate t1.
-
-          array_size *= 10;
-      }
-
-      allocation_size << 2;
-}
-
-*/
 
 int main()
 {
