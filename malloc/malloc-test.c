@@ -77,7 +77,7 @@ void * nice_thread_run(void *args)
     long time_elapsed_nanos;
     struct timespec starttime = timer_start();
 
-    test_arr = malloc(array_size);
+    test_arr = malloc(array_size * sizeof(void*));
 
     for(i = 0; i < array_size; i++)
     {
