@@ -7,4 +7,4 @@ build:
 	./malloc-test
 
 clean:
-	rm -rf result.out malloc-test
+	rm -rf result.tsv malloc-test
