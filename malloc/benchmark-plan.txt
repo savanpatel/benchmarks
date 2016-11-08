@@ -21,20 +21,7 @@
               and plot graph.
            -- Call cleanup() that frees up memory claimed during test before exit.
 
-   -- Bad Threads
-     1) Same testing behavior as Nice threads but doesn't call free.
-          -- Seperate file for its collected time data.
-
-  Memory TEST
-   -- malloc() uses internal data structures to maintain block info/ free list etc.
-      Memory Test Unit checks overhead for different sizes and amound of allocations.
-   -- Run in loop for allocation of size 2^3 to 2^n. Calculate the actual memory
-      of used to toal memory allocated.
-       -- TODO: Need to analyze and figure out a way to do this.
-
 
 3) Analysis
     1) For every num-thread, allocation loop plot a data for
            - Memory request size v/s time taken.
-
-    2) Check trend and search reasoning for strange behavior if any.
