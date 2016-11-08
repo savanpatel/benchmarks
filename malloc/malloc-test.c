@@ -30,9 +30,7 @@ long timer_end(struct timespec start_time)
 {
     struct timespec end_time;
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end_time);
-    long diffInNanos =
-    (round(end_time.tv_nsec/ 1.0e6) -
-                        round(start_time.tv_nsec/ 1.0e6));
+    long diffInNanos = (end_time.tv_nsec) - (start_time.tv_nsec);
     return diffInNanos;
 }
 
@@ -56,7 +54,7 @@ int MAX_ALLOCATION_ARRAY_SIZE = 500;
 /*
  * default test result output file.
  */
-char TEST_OUT_FILE[] = "result.out";
+char TEST_OUT_FILE[] = "result.tsv";
 
 
 
@@ -88,7 +86,7 @@ void * nice_thread_run(void *args)
 
     int i = 0;
     void **test_arr;
-    long time_elapsed_ms;
+    long time_elapsed_nanos;
     struct timespec starttime = timer_start();
 
     test_arr = malloc(array_size * sizeof(void*));
@@ -102,7 +100,7 @@ void * nice_thread_run(void *args)
         }
     }
 
-    time_elapsed_ms = timer_end(starttime);
+    time_elapsed_nanos = timer_end(starttime);
 
     for(i = 0; i < array_size; i++)
     {
@@ -119,10 +117,9 @@ void * nice_thread_run(void *args)
             thread_count,
             allocation_size,
             array_size,
-            time_elapsed_ms);
+            time_elapsed_nanos);
     pthread_mutex_unlock(&result_file_mutex);
     return NULL;
-    //printf("\n %ld", time_elapsed_nanos);
 }
 
 
